@@ -64,9 +64,6 @@ function drawLine(
 ) {
     ctx.beginPath();
     ctx.shadowColor = "black";
-    ctx.shadowOffsetX = 5;
-    ctx.shadowOffsetY = 5;
-    ctx.shadowBlur = 10;
     ctx.moveTo(start.x, start.y);
     ctx.lineTo(end.x, end.y);
     ctx.closePath();

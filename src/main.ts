@@ -4,6 +4,10 @@ import { Switch } from "./types";
 import { AREA } from "./static";
 
 function drawCanvas(ignore_list: string[] = []) {
+  //canvasを黒塗りする
+  const ctx = document.querySelector<HTMLCanvasElement>("canvas")!.getContext("2d")!;
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, AREA.width, AREA.height);
     SWITCH_DATA.forEach((switch_data, i) => {
         if (!ignore_list.includes(switch_data.name))
             new Switch(
