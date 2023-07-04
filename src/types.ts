@@ -1,6 +1,10 @@
 import { AREA } from "./static";
 export type SwitchParam = [number, number];
-export type SwitchData = { name: string, color: string, switchParam: SwitchParam[] }
+export type SwitchData = {
+    name: string;
+    color: string;
+    switchParam: SwitchParam[];
+};
 
 export type Size = { width: number; height: number };
 export class Pos {
@@ -31,7 +35,9 @@ export class Switch {
         this.name = name;
         this.color = color;
         for (const switch_param of switch_params) {
-            this.point_list.push(new Pos(switch_param[0] * 140, switch_param[1] * 5));
+            this.point_list.push(
+                new Pos(switch_param[0] * 140, switch_param[1] * 5)
+            );
         }
     }
 
@@ -55,9 +61,9 @@ function drawLine(
     ctx: CanvasRenderingContext2D,
     start: CanvasPos,
     end: CanvasPos
-  ) {
+) {
     ctx.beginPath();
-    ctx.shadowColor = 'black';
+    ctx.shadowColor = "black";
     ctx.shadowOffsetX = 5;
     ctx.shadowOffsetY = 5;
     ctx.shadowBlur = 10;
@@ -65,4 +71,4 @@ function drawLine(
     ctx.lineTo(end.x, end.y);
     ctx.closePath();
     ctx.stroke();
-  }
+}
