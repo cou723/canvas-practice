@@ -1,119 +1,104 @@
 import "./style.css";
 
 type SwitchParam = [number, number];
+type SwitchData = { name: string, color: string, switchParam: SwitchParam[] }
 
-const GATERON_BROWN_MILK: SwitchParam[] = [
-  [0, 0],
-  [0.1, 40],
-  [0.8, 45],
-  [1.25, 55],
-  [1.8, 40],
-  [2.1, 48],
-  [3.9, 57],
-  [4, 120],
-  [3.9, 55],
-  [2.3, 47],
-  [1.8, 24],
-  [1.1, 42],
-  [0.4, 25],
-  [0.1, 22],
-  [0, 0],
-];
-const KEYCHRON_OPTICAL_BROWN: SwitchParam[] = [
-  [0, 0],
-  [0.1, 36],
-  [0.9, 57],
-  [1.7, 36],
-  [2.4, 50],
-  [2.5, 120],
-  [2.4, 38],
-  [1.7, 20],
-  [0.8, 28.5],
-  [0.1, 17],
-  [0, 0],
-];
-
-const KAILH_MIDNIGHT: SwitchParam[] = [
-  [0, 0],
-  [0, 40],
-  [0.5, 60],
-  [1.6, 38],
-  [1.9, 50],
-  [3.9, 60],
-  [4, 120],
-  [3.9, 58],
-  [2.25, 47],
-  [1.7, 18],
-  [0.4, 40],
-  [0.1, 34],
-  [0, 0],
-];
-
-const GAZZEW_BOBA_U4: SwitchParam[] = [
-  [0, 0],
-  [0.25, 55],
-  [0.4, 62],
-  [1.7, 37],
-  [2.25, 57.5],
-  [3.1, 64],
-  [3.3, 120],
-  [3.1, 64],
-  [2.2, 57],
-  [2, 30],
-  [1.7, 25],
-  [0.25, 50],
-  [0, 0],
-];
-
-const JWICK_V2T1: SwitchParam[] = [
-  [0, 0],
-  [0.3, 55],
-  [0.5, 66],
-  [1, 50],
-  [2, 35],
-  [2.5, 55],
-  [4, 65],
-];
-
-const GATERON_BROWN_LOW: SwitchParam[] = [
-  [0, 0],
-  [0.1, 35],
-  [0.8, 55],
-  [1.6, 45],
-  [2.9, 62],
-  [3, 120],
-  [2.9, 58],
-  [2, 48],
-  [1.6, 35],
-  [0.8, 44],
-  [0.1, 30],
-  [0, 0],
-];
-
+const SWITCH_DATA: SwitchData[] = [{
+  name: "keychron_optical_brown", color: "#b55519", switchParam: [
+    [0, 0],
+    [0.1, 40],
+    [0.8, 45],
+    [1.25, 55],
+    [1.8, 40],
+    [2.1, 48],
+    [3.9, 57],
+    [4, 120],
+    [3.9, 55],
+    [2.3, 47],
+    [1.8, 24],
+    [1.1, 42],
+    [0.4, 25],
+    [0.1, 22],
+    [0, 0],
+  ]
+}, {
+  name: "gateron_brown_milk", color: "#d18528", switchParam: [
+    [0, 0],
+    [0.1, 36],
+    [0.9, 57],
+    [1.7, 36],
+    [2.4, 50],
+    [2.5, 120],
+    [2.4, 38],
+    [1.7, 20],
+    [0.8, 28.5],
+    [0.1, 17],
+    [0, 0],
+  ]
+}, {
+  name: "kailh_midnight", color: "#f2dcaa", switchParam: [
+    [0, 0],
+    [0, 40],
+    [0.5, 60],
+    [1.6, 38],
+    [1.9, 50],
+    [3.9, 60],
+    [4, 120],
+    [3.9, 58],
+    [2.25, 47],
+    [1.7, 18],
+    [0.4, 40],
+    [0.1, 34],
+    [0, 0],
+  ]
+}, {
+  name: "gazzew_boba", color: "#f5f4f2", switchParam: [
+    [0, 0],
+    [0.25, 55],
+    [0.4, 62],
+    [1.7, 37],
+    [2.25, 57.5],
+    [3.1, 64],
+    [3.3, 120],
+    [3.1, 64],
+    [2.2, 57],
+    [2, 30],
+    [1.7, 25],
+    [0.25, 50],
+    [0, 0],
+  ]
+}, {
+  name: "jwick", color: "#31a5cc", switchParam: [
+    [0, 0],
+    [0.3, 55],
+    [0.5, 66],
+    [1, 50],
+    [2, 35],
+    [2.5, 55],
+    [4, 65],
+  ]
+}, {
+  name: "gateron_brown_low", color: "#8a4504", switchParam: [
+    [0, 0],
+    [0.1, 35],
+    [0.8, 55],
+    [1.6, 45],
+    [2.9, 62],
+    [3, 120],
+    [2.9, 58],
+    [2, 48],
+    [1.6, 35],
+    [0.8, 44],
+    [0.1, 30],
+    [0, 0],
+  ]
+}
+]
 function drawCanvas(ignore_list: string[] = []) {
-
-  const switches = [];
-  if (!ignore_list.includes("gateron_brown_milk"))
-    switches.push(new Switch("gateron_brown_milk", "brown", GATERON_BROWN_MILK));
-  if (!ignore_list.includes("keychron_optical_brown"))
-    switches.push(new Switch(
-      "keychron_optical_brown",
-      "#a86722",
-      KEYCHRON_OPTICAL_BROWN
-    ));
-  if (!ignore_list.includes("kailh_midnight"))
-    switches.push(new Switch("kailh midnight", "#edddb9", KAILH_MIDNIGHT));
-  if (!ignore_list.includes("gazzew_boba"))
-    switches.push(new Switch(
-      "gazzew boba u4",
-      "#b9b9b9",
-      GAZZEW_BOBA_U4
-    ));
-  if (!ignore_list.includes("jwick"))
-    switches.push(new Switch("jwick", "#2ea5d9", JWICK_V2T1));
-  if (!ignore_list.includes("gateron_brown_low"))
-    switches.push(new Switch("gateron_brown_low", "#8a4012", GATERON_BROWN_LOW));
-  switches.map((sw, index) => sw.draw(index+1));
+  SWITCH_DATA.forEach((switch_data, i) => {
+    if (!ignore_list.includes(switch_data.name))
+      new Switch(switch_data.name, switch_data.color, switch_data.switchParam).draw(i);
+  })
 }
 
 function main() {
@@ -182,6 +167,10 @@ function drawLine(
   end: CanvasPos
 ) {
   ctx.beginPath();
+  ctx.shadowColor = 'black';
+  ctx.shadowOffsetX = 5;
+  ctx.shadowOffsetY = 5;
+  ctx.shadowBlur = 10;
   ctx.moveTo(start.x, start.y);
   ctx.lineTo(end.x, end.y);
   ctx.closePath();
@@ -189,7 +178,7 @@ function drawLine(
 }
 
 const all = document.querySelectorAll<HTMLInputElement>("input");
-let ignore_list:string[] = [];
+let ignore_list: string[] = [];
 for (const e of all) {
   e.onchange = () => {
     // canvasをクリア
