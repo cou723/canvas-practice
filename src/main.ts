@@ -10,7 +10,7 @@ function drawCanvas(ignore_list: string[] = []) {
                 switch_data.name,
                 switch_data.color,
                 switch_data.switchParam
-            ).draw(i);
+            ).draw(i+1);
     });
 }
 

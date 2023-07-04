@@ -1,8 +1,8 @@
 import { SwitchData } from "./types";
 export const SWITCH_DATA: SwitchData[] = [
     {
-        name: "keychron_optical_brown",
-        color: "#b55519",
+        name: "gateron_brown_milk",
+        color: "#bf8752",
         switchParam: [
             [0, 0],
             [0.1, 40],
@@ -22,7 +22,7 @@ export const SWITCH_DATA: SwitchData[] = [
         ],
     },
     {
-        name: "gateron_brown_milk",
+        name: "keychron_optical_brown",
         color: "#d18528",
         switchParam: [
             [0, 0],
@@ -106,5 +106,37 @@ export const SWITCH_DATA: SwitchData[] = [
             [0.1, 30],
             [0, 0],
         ],
-    },
+    }, {
+        name: "kailh_brown_box",
+        color: "#705435",
+        switchParam: [
+            [0, 0],
+            [0.1, 42],
+            [0.6, 60],
+            [1.75, 48],
+            [3.6, 58],
+            [3.62, 120],
+            [3.6, 57],
+            [2.25, 50],
+            [1.8, 28],
+            [0.6, 47],
+            [0.1, 30],
+            [0, 0]]
+    }, {
+        name: "kailh_brown_box_silent",
+        color: "#b55519",
+        switchParam: [
+            [0, 0],
+            [0.1, 42],
+            [0.6, 67],
+            [1.75, 40],
+            [3.8, 65],
+            [3.8, 120],
+            [3.8, 64],
+            [2.4, 44],
+            [1.75, 24],
+            [0.6, 58],
+            [0.1, 26],
+            [0, 0]]
+    }
 ];

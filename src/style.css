@@ -5,3 +5,12 @@ canvas {
     display: block;
     margin: 5px;
 }
+
+.wrapper{
+    display: grid;
+    grid-template-columns: auto 300px;
+}
+
+.wrapper > div {
+    margin: 5px;
+}

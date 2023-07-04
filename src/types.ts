@@ -36,7 +36,7 @@ export class Switch {
         this.color = color;
         for (const switch_param of switch_params) {
             this.point_list.push(
-                new Pos(switch_param[0] * 140, switch_param[1] * 5)
+                new Pos(switch_param[0] * 200, switch_param[1] * 8)
             );
         }
     }
